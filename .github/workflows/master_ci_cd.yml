@@ -7,8 +7,8 @@ on: [push]
 env:
   VERSION: "1.0.${{ github.run_number }}"
 jobs:
-  build:
-
+  CI:
+    name: CI Job
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -43,6 +43,20 @@ jobs:
           tags: |
             dawnsql/dawnsql-java-client:latest
             dawnsql/dawnsql-java-client:${{ env.VERSION }}
+
+  CD:
+    name: CD Job
+    needs: CI
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: echo version
+        run: echo version $VERSION
+      - uses: actions/checkout@v3
+
       - name: replace version
         run: find . -type f -exec sed -i -e "s/{version}/${{ env.VERSION }}/" {} \;
 
