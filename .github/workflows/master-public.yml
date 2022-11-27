@@ -47,5 +47,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: dawnsql/dawnsql-java-client:1.0.${env:GITHUB_RUN_NUMBER}
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
