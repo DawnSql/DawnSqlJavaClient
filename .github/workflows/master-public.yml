@@ -4,7 +4,8 @@
 name: Maven Package
 
 on: [push]
-
+env:
+  version: 1.0.${GITHUB_RUN_NUMBER}
 jobs:
   build:
 
@@ -41,7 +42,7 @@ jobs:
             dawnsql/dawnsql-java-client
           tags: |
             latest
-            1.0.${{ env.GITHUB_RUN_NUMBER }}
+            $version
       - name: Build and push Docker images
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
