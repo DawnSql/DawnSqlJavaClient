@@ -70,7 +70,7 @@
             </div>
         </div>
         <div id="show_doc" class="content guide with-sidebar installation-guide">
-            <iframe src='../page/DawnSql介绍_1.html' scrolling='no' style="overflow:visible;" frameborder='0' width='100%' height='100%'></iframe>
+            <iframe src='/page/DawnSql介绍_1.html' scrolling='no' style="overflow:visible;" frameborder='0' width='100%' height='100%'></iframe>
         </div>
     </div>
 </body>
