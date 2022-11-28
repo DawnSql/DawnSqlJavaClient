@@ -39,7 +39,7 @@ metadata:
   namespace: dawnsql
 spec:
   rules:
-    - host: client.dawnsql.com
+    - host: docs.dawnsql.com
       http:
         paths:
           - backend:
